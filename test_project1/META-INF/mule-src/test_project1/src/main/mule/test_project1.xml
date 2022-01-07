@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a053d4dc-5914-4c5a-9e4c-02c2ab935b8c" >
+		<http:listener-connection host="0.0.0.0" port="80" />
+	</http:listener-config>
+	<flow name="test_project1Flow" doc:id="c87f92fe-cb05-483d-a6ff-6c91eea96f4d" >
+		<http:listener doc:name="Listener" doc:id="471d08be-92db-4822-aff4-9079d2417b3d" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="{&#10;	&quot;id&quot;: &quot;0001&quot;,&#10;	&quot;type&quot;: &quot;donut&quot;,&#10;	&quot;name&quot;: &quot;Cake&quot;,&#10;	&quot;ppu&quot;: 0.55,&#10;	&quot;batters&quot;:&#10;		{&#10;			&quot;batter&quot;:&#10;				[&#10;					{ &quot;id&quot;: &quot;1001&quot;, &quot;type&quot;: &quot;Regular&quot; },&#10;					{ &quot;id&quot;: &quot;1002&quot;, &quot;type&quot;: &quot;Chocolate&quot; },&#10;					{ &quot;id&quot;: &quot;1003&quot;, &quot;type&quot;: &quot;Blueberry&quot; },&#10;					{ &quot;id&quot;: &quot;1004&quot;, &quot;type&quot;: &quot;Devil's Food&quot; }&#10;				]&#10;		},&#10;	&quot;topping&quot;:&#10;		[&#10;			{ &quot;id&quot;: &quot;5001&quot;, &quot;type&quot;: &quot;None&quot; },&#10;			{ &quot;id&quot;: &quot;5002&quot;, &quot;type&quot;: &quot;Glazed&quot; },&#10;			{ &quot;id&quot;: &quot;5005&quot;, &quot;type&quot;: &quot;Sugar&quot; },&#10;			{ &quot;id&quot;: &quot;5007&quot;, &quot;type&quot;: &quot;Powdered Sugar&quot; },&#10;			{ &quot;id&quot;: &quot;5006&quot;, &quot;type&quot;: &quot;Chocolate with Sprinkles&quot; },&#10;			{ &quot;id&quot;: &quot;5003&quot;, &quot;type&quot;: &quot;Chocolate&quot; },&#10;			{ &quot;id&quot;: &quot;5004&quot;, &quot;type&quot;: &quot;Maple&quot; }&#10;		]&#10;}" doc:name="Set Payload" doc:id="1443d1c5-4ee8-4c99-8d60-5fefba11a41a" />
+	</flow>
+</mule>
